@@ -26,4 +26,4 @@ fun aoc(fileName : String, check : Any? = null, fn : (List<String>) -> Any?) {
 }
 
 const val debug = true
-fun log(message : String) = if (debug) println("DEBUG: $message") else Unit
+fun log(message : Any?) = if (debug) println("DEBUG: $message") else Unit
