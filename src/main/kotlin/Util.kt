@@ -2,7 +2,11 @@ import kotlin.io.path.Path
 import kotlin.io.path.readLines
 import kotlin.time.measureTimedValue
 
-fun aoc(fileName : String, check : Any? = null, fn : (List<String>) -> Any?) {
+fun aoc(
+    fileName : String,
+    check : Any? = null,
+    fn : (List<String>) -> Any?,
+) {
     val lines = Path("src/main/resources/$fileName")
         .readLines()
 

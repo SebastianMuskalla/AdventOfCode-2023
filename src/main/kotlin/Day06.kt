@@ -3,7 +3,10 @@ private data class Race(
     val distance : Long,
 )
 
-private fun evaluate(race : Race, wait : Long) : Long {
+private fun evaluate(
+    race : Race,
+    wait : Long,
+) : Long {
     require(wait in 0 .. race.time)
     return (race.time - wait) * wait - race.distance
 }
@@ -42,7 +45,11 @@ private fun binarySearchMaximum(race : Race) : Long {
  *
  * Requires monotonicFn to be monotonic on start..end, i.e. its function values look are of the shape F*T*
  */
-private fun binarySearchWithPredicate(start : Long, end : Long, monotonicFn : (Long) -> Boolean) : Long {
+private fun binarySearchWithPredicate(
+    start : Long,
+    end : Long,
+    monotonicFn : (Long) -> Boolean,
+) : Long {
     var lower = start
     var upper = end
     while (upper - lower > 1) {
@@ -50,8 +57,7 @@ private fun binarySearchWithPredicate(start : Long, end : Long, monotonicFn : (L
         val mid = (upper + lower) / 2
         if (monotonicFn(mid)) {
             upper = mid
-        }
-        else {
+        } else {
             lower = mid
         }
     }

@@ -28,7 +28,10 @@ private fun partOne(lines : List<String>) : Long {
 
     val cardOrder = listOf('2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A')
 
-    fun lexicographicCompare(one : Pair<String, *>, two : Pair<String, *>) : Int {
+    fun lexicographicCompare(
+        one : Pair<String, *>,
+        two : Pair<String, *>,
+    ) : Int {
         val handOne = one.first
         val handTwo = two.first
         require(handOne.length == 5 && handTwo.length == 5)
@@ -85,7 +88,10 @@ private fun partTwo(lines : List<String>) : Long {
 
     val cardOrder = listOf('J', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'Q', 'K', 'A')
 
-    fun lexicographicCompare(one : Pair<String, *>, two : Pair<String, *>) : Int {
+    fun lexicographicCompare(
+        one : Pair<String, *>,
+        two : Pair<String, *>,
+    ) : Int {
         val handOne = one.first
         val handTwo = two.first
         require(handOne.length == 5 && handTwo.length == 5)

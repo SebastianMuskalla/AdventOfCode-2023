@@ -44,12 +44,12 @@ private fun partTwo(lines : List<String>) =
                 }
             }
 
-            amountPerColor.map { it.value }.fold(1L) { a, b -> a*b }
+            amountPerColor.map { it.value }.fold(1L) { a, b -> a * b }
         }
 
 private fun main() {
     aoc("02-example.txt", 8L) { partOne(it) }
-    aoc("02-input.txt", 2377L)  { partOne(it) }
+    aoc("02-input.txt", 2377L) { partOne(it) }
     aoc("02-example.txt", 2286L) { partTwo(it) }
     aoc("02-input.txt", 71220L) { partTwo(it) }
 }

@@ -12,8 +12,7 @@ private fun buildAlmanacEntry(rules : List<String>) : (Long) -> Long {
         val diff = input - ruleSource
         return if (diff >= range) {
             input
-        }
-        else {
+        } else {
             ruleTarget + diff
         }.also { log("Returning $it") }
     }
@@ -74,8 +73,7 @@ private data class Rule(
 
         val mappedTarget = if (mappedSource.isEmpty()) {
             LongRange.EMPTY
-        }
-        else {
+        } else {
             this.applyTo(mappedSource.first) .. this.applyTo(mappedSource.last)
         }
 
@@ -83,7 +81,10 @@ private data class Rule(
     }
 }
 
-private fun applyRules(rules : Collection<Rule>, interval : LongRange) : Collection<LongRange> {
+private fun applyRules(
+    rules : Collection<Rule>,
+    interval : LongRange,
+) : Collection<LongRange> {
 
     if (interval.isEmpty()) return emptyList()
 
@@ -131,8 +132,7 @@ private fun partTwo(lines : List<String>) : Long {
         .fold(listOf<LongRange>() to -1L) { (accumulatorList, accumulatorValue), range ->
             if (accumulatorValue == -1L) {
                 accumulatorList to range
-            }
-            else {
+            } else {
                 accumulatorList.plusElement(accumulatorValue ..< (accumulatorValue + range)) to -1L
             }
         }

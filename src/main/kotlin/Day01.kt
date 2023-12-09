@@ -10,8 +10,8 @@ private fun partOne(lines : List<String>) =
 private val digitMapper = listOf("one", "two", "three", "four", "five", "six", "seven", "eight", "nine")
 
 private fun partTwo(lines : List<String>) =
-        lines
-            .sumOf { line ->
+    lines
+        .sumOf { line ->
 
             var firstIndex = line.indexOfFirst { it.isDigit() }.takeIf { it != -1 } ?: Int.MAX_VALUE
             var firstDigit = if (firstIndex < line.length) line[firstIndex].code - '0'.code else 0
@@ -42,7 +42,7 @@ private fun partTwo(lines : List<String>) =
 
 private fun main() {
     aoc("01-example1.txt", 142L) { partOne(it) }
-    aoc("01-input.txt", 54597L)  { partOne(it) }
+    aoc("01-input.txt", 54597L) { partOne(it) }
     aoc("01-example2.txt", 281L) { partTwo(it) }
     aoc("01-input.txt", 54504L) { partTwo(it) }
 }

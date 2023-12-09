@@ -10,14 +10,12 @@ private fun partOne(lines : List<String>) : Int =
 
             if (overlap == 0) {
                 0
-            }
-            else {
+            } else {
                 2.toBigInteger().pow(overlap - 1).toInt()
             }
         }
 
 private fun partTwo(lines : List<String>) : Int {
-
 
     fun winningNumbersPerLine(line : String) : Int {
         val suffix = line.split(": ")[1]
