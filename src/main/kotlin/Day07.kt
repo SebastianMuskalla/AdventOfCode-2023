@@ -117,8 +117,8 @@ private fun partTwo(lines : List<String>) : Long {
 }
 
 private fun main() {
-    aoc("07-example.txt", 6440L) { partOne(it) }
-    aoc("07-input.txt", 248105065L) { partOne(it) }
-    aoc("07-example.txt", 5905L) { partTwo(it) }
-    aoc("07-input.txt", 249515436L) { partTwo(it) }
+    aoc("07-example.txt", "6440") { partOne(it) }
+    aoc("07-input.txt", "248105065") { partOne(it) }
+    aoc("07-example.txt", "5905") { partTwo(it) }
+    aoc("07-input.txt", "249515436") { partTwo(it) }
 }
