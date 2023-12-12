@@ -161,36 +161,36 @@ private fun partTwo(lines : List<String>) : Long {
 
     val loop = mutableListOf(rowS to colS)
 
-    var row = rowS
-    var col = colS
+    var rowIndex = rowS
+    var colIndex = colS
     var previous : Pair<Int, Int>? = null
     var i = 1
     do {
         i++
 //        log("Move $i, current position is $row $col")
         when {
-            rows[row][col].connectsNorth && (row - 1 to col) != previous -> {
-                previous = row to col
-                row -= 1
+            rows[rowIndex][colIndex].connectsNorth && (rowIndex - 1 to colIndex) != previous -> {
+                previous = rowIndex to colIndex
+                rowIndex -= 1
             }
 
-            rows[row][col].connectsSouth && (row + 1 to col) != previous -> {
-                previous = row to col
-                row += 1
+            rows[rowIndex][colIndex].connectsSouth && (rowIndex + 1 to colIndex) != previous -> {
+                previous = rowIndex to colIndex
+                rowIndex += 1
             }
 
-            rows[row][col].connectsEast && (row to col + 1) != previous -> {
-                previous = row to col
-                col += 1
+            rows[rowIndex][colIndex].connectsEast && (rowIndex to colIndex + 1) != previous -> {
+                previous = rowIndex to colIndex
+                colIndex += 1
             }
 
-            rows[row][col].connectsWest && (row to col - 1) != previous -> {
-                previous = row to col
-                col -= 1
+            rows[rowIndex][colIndex].connectsWest && (rowIndex to colIndex - 1) != previous -> {
+                previous = rowIndex to colIndex
+                colIndex -= 1
             }
         }
-        loop += row to col
-    } while (row != rowS || col != colS)
+        loop += rowIndex to colIndex
+    } while (rowIndex != rowS || colIndex != colS)
 
     /**
      * Idea: Use a flood fill (good old paint bucket from MS paint)
@@ -308,9 +308,9 @@ private fun partTwo(lines : List<String>) : Long {
 
     log(fullyPainted.pretty())
 
-    return fullyPainted.sumOfIndexed { rowIndex, row ->
+    return fullyPainted.sumOfIndexed { rowIdx, row ->
 
-        if (rowIndex % 2 != 0)
+        if (rowIdx % 2 != 0)
             return@sumOfIndexed 0L
 
         row.sumOfIndexed { colIndex, char ->
