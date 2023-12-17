@@ -268,5 +268,5 @@ private fun main() {
     aoc("16-input.txt", "7728") { partOne(it) }
     aoc("16-example.txt", "51") { partTwo(it) }
     // needs ~15min on my machine
-    aoc("16-input.txt", null) { partTwo(it) }
+    aoc("16-input.txt", "8061") { partTwo(it) }
 }
